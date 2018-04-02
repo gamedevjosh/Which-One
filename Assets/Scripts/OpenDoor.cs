@@ -11,13 +11,13 @@ public class OpenDoor : MonoBehaviour
     public Vector3 openPosition;
 
     public bool isOpen = true;
-    public bool timedDoor = false;
+    [HideInInspector]
     public bool canTrigger = true;
-
-    public float speed;
-    public float timer;
+    public bool timedDoor = false;
+    
     public float doorActiveTime;
-
+    [HideInInspector]
+    public float timer;
     private void Start()
     {
         StartCoroutine(TriggerDoor());
