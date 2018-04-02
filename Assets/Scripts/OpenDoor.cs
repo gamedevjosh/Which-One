@@ -11,22 +11,16 @@ public class OpenDoor : MonoBehaviour
     public Vector3 openPosition;
 
     public bool isOpen = true;
+    public bool timedDoor = false;
+    public bool canTrigger = true;
 
     public float speed;
     public float timer;
+    public float doorActiveTime;
 
     private void Start()
     {
-        if (isOpen)
-        {
-            StartCoroutine(DoorOpen());
-        }
-        else
-        {
-            StartCoroutine(DoorClose());
-        }
-        doorOpenPosition.transform.position = door.transform.position;
-        openPosition = door.transform.position;
+        StartCoroutine(TriggerDoor());
     }
 
     private void Update()
@@ -36,63 +30,71 @@ public class OpenDoor : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Entered trigger");
-        if (!isOpen && other.CompareTag("Player 1") || !isOpen && other.CompareTag("Player 2"))
+        if (other.CompareTag("Player 1") || other.CompareTag("Player 2") && canTrigger)
         {
-            isOpen = true;
-            StartCoroutine(DoorOpen());
+            canTrigger = false;
+            if(timedDoor == true)
+            {
+                StartCoroutine(TriggerTimedDoor());
+            }
+            else
+            {
+                StartCoroutine(TriggerDoor());
+            }
         }
 
-        else if(isOpen && other.CompareTag("Player 1") || isOpen && other.CompareTag("Player 2"))
+        
+    }
+
+    public IEnumerator TriggerDoor()
+    {
+        if (isOpen)
         {
+            timer += Time.deltaTime;
+            door.transform.position = Vector3.Lerp(doorOpenPosition.transform.position, doorClosePosition.transform.position, timer);
             isOpen = false;
-            StartCoroutine(DoorClose());
         }
-    }
-
-    public IEnumerator DoorOpen()
-    {
-        timer += Time.deltaTime;
-        door.transform.position = Vector3.Lerp(doorOpenPosition.transform.position, doorClosePosition.transform.position, timer);
-        yield return new WaitForSeconds(3f);
+        else
+        {
+            timer += Time.deltaTime;
+            door.transform.position = Vector3.Lerp(doorClosePosition.transform.position, openPosition, timer);
+            isOpen = true;
+        }
+        yield return new WaitForSeconds(1f);
         timer = 0;
+        canTrigger = true;
         yield return null;
     }
 
-    public IEnumerator DoorClose()
+    public IEnumerator TriggerTimedDoor()
     {
-        timer += Time.deltaTime;
-        door.transform.position = Vector3.Lerp(doorClosePosition.transform.position, openPosition, timer);
-        yield return new WaitForSeconds(3f);
+        if (isOpen)
+        {
+            timer += Time.deltaTime;
+            door.transform.position = Vector3.Lerp(doorOpenPosition.transform.position, doorClosePosition.transform.position, timer);
+            isOpen = false;
+        }
+        else
+        {
+            timer += Time.deltaTime;
+            door.transform.position = Vector3.Lerp(doorClosePosition.transform.position, openPosition, timer);
+            isOpen = true;
+        }
+        yield return new WaitForSeconds(doorActiveTime);
+        if (isOpen)
+        {
+            timer += Time.deltaTime;
+            door.transform.position = Vector3.Lerp(doorOpenPosition.transform.position, doorClosePosition.transform.position, timer);
+            isOpen = false;
+        }
+        else
+        {
+            timer += Time.deltaTime;
+            door.transform.position = Vector3.Lerp(doorClosePosition.transform.position, openPosition, timer);
+            isOpen = true;
+        }
         timer = 0;
+        canTrigger = true;
         yield return null;
     }
-
-
-    //IEnumerator doorOpen()
-    //{
-    //    timer += Time.deltaTime;
-    //    Debug.Log("Door open Coroutine started");
-    //    door.transform.position = Vector3.Lerp(openPosition, doorClose.transform.position, timer);
-    //    yield return new WaitForSeconds(1);
-    //    openDoor = false;
-    //    isClosed = true;
-    //    Debug.Log("Open door is false");
-    //    timer = 0;
-    //    yield return null;
-    //}
-
-    //IEnumerator doorCloseFunc()
-    //{
-    //    timer += Time.deltaTime;
-    //    Debug.Log("Door close Coroutine started");
-    //    door.transform.position = Vector3.Lerp(doorClose.transform.position, openPosition, timer);
-    //    yield return new WaitForSeconds(1);
-    //    closeDoor = false;
-    //    isOpen = true;
-    //    isClosed = false;
-    //    Debug.Log("close door is false");
-    //    timer = 0;
-    //    yield return null;
-    //}
 }
