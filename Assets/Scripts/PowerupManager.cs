@@ -6,6 +6,7 @@ public class PowerupManager : MonoBehaviour
 {
     public bool isReversePowerup;
     public bool movementEnabled = false;
+    public bool StartReversed;
 
     public GameObject player1;
     public GameObject player2;
@@ -14,6 +15,11 @@ public class PowerupManager : MonoBehaviour
     {
         player1 = GameObject.FindGameObjectWithTag("Player 1");
         player2 = GameObject.FindGameObjectWithTag("Player 2");
+        
+        if (StartReversed == true)
+        {
+            ReverseMovement();
+        }
     }
 
     public void OnTriggerEnter2D(Collider2D other)
