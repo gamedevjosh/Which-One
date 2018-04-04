@@ -14,6 +14,7 @@ public class PowerupManager : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D other)
     {
+        print("boi");
         if (other.CompareTag("Player 1") || other.CompareTag("Player 2"))
         {
             if(ReversePowerup == false)
