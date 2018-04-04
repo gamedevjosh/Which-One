@@ -264,6 +264,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 1056297046363498, guid: 758104f9198a9df419375a0d06610a54, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1458942631439258, guid: 758104f9198a9df419375a0d06610a54, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 758104f9198a9df419375a0d06610a54, type: 2}
   m_IsPrefabParent: 0
@@ -457,6 +465,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 56767c5cd48a1c14d97fb3e7aa2a97ee, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &848346359 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1458942631439258, guid: 758104f9198a9df419375a0d06610a54,
+    type: 2}
+  m_PrefabInternal: {fileID: 546444779}
 --- !u!1 &1202280142
 GameObject:
   m_ObjectHideFlags: 0
@@ -671,6 +684,7 @@ GameObject:
   - component: {fileID: 1420204559}
   - component: {fileID: 1420204558}
   - component: {fileID: 1420204557}
+  - component: {fileID: 1420204561}
   m_Layer: 0
   m_Name: Door Open
   m_TagString: Untagged
@@ -780,6 +794,18 @@ Transform:
   m_Father: {fileID: 67152297}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1420204561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1420204556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b0267cfa3978c84f95983a854df6267, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  winCanvas: {fileID: 848346359}
 --- !u!1001 &1489749566
 Prefab:
   m_ObjectHideFlags: 0
