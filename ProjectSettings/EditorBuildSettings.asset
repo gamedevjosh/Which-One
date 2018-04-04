@@ -6,17 +6,17 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Main Menu.unity
+    path: Assets/Joshua Nieves/Scenes/Main Menu.unity
     guid: ef959dbe3428b904b8fd0bf3d05b783c
   - enabled: 1
-    path: Assets/Scenes/Level Select.unity
+    path: Assets/Joshua Nieves/Scenes/Level Select.unity
     guid: f13411406ca58a944833be105eabb9dc
   - enabled: 1
-    path: Assets/Scenes/Credits.unity
-    guid: ae0199dbfe6c44e4e8ef2eefbcbb1f3c
+    path: Assets/Joshua Nieves/Scenes/Options.unity
+    guid: e5e2553889d57054683fc711375e899c
   - enabled: 1
-    path: Assets/Scenes/Level 1.unity
+    path: Assets/Joshua Nieves/Scenes/Level 1.unity
     guid: 6cbec88c97ec36c4192ae75d7f257296
   - enabled: 1
-    path: Assets/Scenes/Options.unity
-    guid: e5e2553889d57054683fc711375e899c
+    path: Assets/Joshua Nieves/Scenes/Credits.unity
+    guid: ae0199dbfe6c44e4e8ef2eefbcbb1f3c
