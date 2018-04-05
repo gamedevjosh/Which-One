@@ -594,7 +594,9 @@ MonoBehaviour:
   doorOpenPosition: {fileID: 1281121114}
   openPosition: {x: 0, y: 0, z: 0}
   isOpen: 1
-  speed: 1
+  canTrigger: 1
+  timedDoor: 0
+  doorActiveTime: 0
   timer: 0
 --- !u!50 &255532852
 Rigidbody2D:
@@ -1158,6 +1160,18 @@ Prefab:
         type: 2}
       propertyPath: m_Constraints
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4445262677416478, guid: 56767c5cd48a1c14d97fb3e7aa2a97ee, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 5.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4445262677416478, guid: 56767c5cd48a1c14d97fb3e7aa2a97ee, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4445262677416478, guid: 56767c5cd48a1c14d97fb3e7aa2a97ee, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 56767c5cd48a1c14d97fb3e7aa2a97ee, type: 2}
@@ -1745,11 +1759,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62d587ea0b368954dbb8d1a42327fb2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isReversePowerup: 1
-  movementEnabled: 0
-  StartReversed: 1
-  player1: {fileID: 0}
-  player2: {fileID: 0}
+  player: {fileID: 0}
+  ReversePowerup: 0
 --- !u!212 &812199323
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2215,7 +2226,9 @@ MonoBehaviour:
   doorOpenPosition: {fileID: 420162623}
   openPosition: {x: 0, y: 0, z: 0}
   isOpen: 1
-  speed: 1
+  canTrigger: 1
+  timedDoor: 0
+  doorActiveTime: 0
   timer: 0
 --- !u!50 &946574090
 Rigidbody2D:
@@ -3480,7 +3493,9 @@ MonoBehaviour:
   doorOpenPosition: {fileID: 1457574906}
   openPosition: {x: 0, y: 0, z: 0}
   isOpen: 1
-  speed: 1
+  canTrigger: 1
+  timedDoor: 0
+  doorActiveTime: 0
   timer: 0
 --- !u!50 &1617996371
 Rigidbody2D:
@@ -3653,7 +3668,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1668849255
 GameObject:
@@ -3706,7 +3721,9 @@ MonoBehaviour:
   doorOpenPosition: {fileID: 1679531366}
   openPosition: {x: 0, y: 0, z: 0}
   isOpen: 1
-  speed: 1
+  canTrigger: 1
+  timedDoor: 0
+  doorActiveTime: 0
   timer: 0
 --- !u!50 &1668849258
 Rigidbody2D:
@@ -5100,6 +5117,19 @@ Prefab:
         type: 2}
       propertyPath: m_Constraints
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4124255551198142, guid: b1e00b9f9f7c5ed4687c6ead7518b133, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -5.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4124255551198142, guid: b1e00b9f9f7c5ed4687c6ead7518b133, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 4.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 114378223053680606, guid: b1e00b9f9f7c5ed4687c6ead7518b133,
+        type: 2}
+      propertyPath: isReversed
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b1e00b9f9f7c5ed4687c6ead7518b133, type: 2}
