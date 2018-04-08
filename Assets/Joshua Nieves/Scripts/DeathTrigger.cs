@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DeathTrigger : MonoBehaviour {
 
@@ -13,8 +14,8 @@ public class DeathTrigger : MonoBehaviour {
 	void Start () {
         p1 = GameObject.Find("Player 1");
         p2 = GameObject.Find("Player 2");
-        p1StartPosition = p1.transform.position;
-        p2StartPosition = p2.transform.position;
+        //p1StartPosition = p1.transform.position;
+        //p2StartPosition = p2.transform.position;
 	}
 	
 	// Update is called once per frame
@@ -26,8 +27,9 @@ public class DeathTrigger : MonoBehaviour {
     {
         if(collision.CompareTag("Player 1") || collision.CompareTag("Player 2"))
         {
-            p1.transform.position = p1StartPosition;
-            p2.transform.position = p2StartPosition;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            //p1.transform.position = p1StartPosition;
+            //p2.transform.position = p2StartPosition;
         }
     }
 
