@@ -9,8 +9,20 @@ EditorBuildSettings:
     path: Assets/Joshua Nieves/Scenes/Main Menu.unity
     guid: ef959dbe3428b904b8fd0bf3d05b783c
   - enabled: 1
-    path: Assets/Joshua Nieves/Scenes/Level Select.unity
+    path: Assets/Joshua Nieves/Scenes/LevelSelectArea1.unity
     guid: f13411406ca58a944833be105eabb9dc
+  - enabled: 1
+    path: Assets/Joshua Nieves/Scenes/LevelSelectArea2.unity
+    guid: c6f8a41b888ace244b5eae6758b0259d
+  - enabled: 1
+    path: Assets/Joshua Nieves/Scenes/LevelSelectArea3.unity
+    guid: 09f30f444375ade4a803601665b68b61
+  - enabled: 1
+    path: Assets/Joshua Nieves/Scenes/LevelSelectArea4.unity
+    guid: c4084ae1b7e878f4db2d14670eb6218a
+  - enabled: 1
+    path: Assets/Joshua Nieves/Scenes/LevelSelectArea5.unity
+    guid: 60aca47077c854148bc95798715dc6a5
   - enabled: 1
     path: Assets/Joshua Nieves/Scenes/Options.unity
     guid: e5e2553889d57054683fc711375e899c

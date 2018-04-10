@@ -34,7 +34,27 @@ public class LevelManager : MonoBehaviour
 
     public void Play()
     {
-        SceneManager.LoadScene("Level Select");
+        SceneManager.LoadScene("LevelSelectArea1");
+    }
+
+    public void Area2()
+    {
+        SceneManager.LoadScene("LevelSelectArea2");
+    }
+
+    public void Area3()
+    {
+        SceneManager.LoadScene("LevelSelectArea3");
+    }
+
+    public void Area4()
+    {
+        SceneManager.LoadScene("LevelSelectArea4");
+    }
+
+    public void Area5()
+    {
+        SceneManager.LoadScene("LevelSelectArea5");
     }
 
     public void Restart()
