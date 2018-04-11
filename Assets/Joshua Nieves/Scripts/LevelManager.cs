@@ -100,9 +100,9 @@ public class LevelManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
-    public void Level1()
+    public void LoadLevel(int buildNum)
     {
-        SceneManager.LoadScene("Level 1");
+        SceneManager.LoadScene(buildNum);
     }
 
     public void Resume()
